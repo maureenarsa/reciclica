@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="secondary" style="color: white;">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pickup Call</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img src="../../../assets/icon/map.png" alt="">
+  <ion-card>
+    <ion-card-content>
+      <p>Address: Jl. Waturenggong No. 552, Panjer, Kec. Denpasar Barat, Kota Denpasar, Bali 80234, Indonesia</p>
+      <p>Complement: Apto 1000</p>
+      <p>Neighbourhood: Panjer</p>
+      <p>Zipcode: 80234</p>
+      <p>City name: Kota Denpasar, Bali</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item lines="inset">
+      <ion-input label="Notes" labelPlacement="floating" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button size="full" color="secondary" (click)="newPickupCall()">Create Pickup Call</ion-button>
+</ion-content>
