@@ -6,9 +6,14 @@ export const AppInitialState: AppState = {
   },
   login: {
     error: null,
-    isLoggedIn: false,
-    isLoggingIn: false,
     isRecoveredPassword: false,
-    isRecoveringPassword: false
+    isRecoveringPassword: false,
+    isLoggedIn: false,
+    isLoggingIn: false
+  },
+  register: {
+    error: null,
+    isRegistered: false,
+    isRegistering: false
   }
 }

@@ -1,8 +1,8 @@
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { LoaderPage } from './loader.page';
 import { Router } from '@angular/router';
+import { HomePage } from '../home/home.page';
+import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('LoaderPage', () => {
@@ -12,7 +12,7 @@ describe('LoaderPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoaderPage ],
+      declarations: [LoaderPage],
       imports: [
         IonicModule.forRoot(),
         AppRoutingModule
@@ -25,13 +25,10 @@ describe('LoaderPage', () => {
     component = fixture.componentInstance;
   }));
 
-  it('should go to login page after load', fakeAsync(() => {
+  it('should go to login page after load', fakeAsync(() =>{
     spyOn(router, 'navigate');
-
-    component.ngOnInit();
-
+    component.ngOnInit()
     tick(1500);
-
-    expect(router.navigate).toHaveBeenCalledWith(['login'])
-  }))
+    expect(router.navigate).toHaveBeenCalledWith(['login']);
+  }));
 });

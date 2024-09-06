@@ -4,14 +4,16 @@ import { LoginPageForm } from "./login.page.form";
 describe('LoginPageForm', () => {
 
   let loginPageForm: LoginPageForm;
-  let form: FormGroup
+  let form: FormGroup;
 
   beforeEach(() => {
+
     loginPageForm = new LoginPageForm(new FormBuilder());
     form = loginPageForm.createForm();
   })
 
   it('should create login form empty', () => {
+
     expect(form).not.toBeNull();
     expect(form.get('email')).not.toBeNull();
     expect(form.get('email')?.value).toEqual("");
@@ -35,8 +37,9 @@ describe('LoginPageForm', () => {
 
   it('should have a valid form', () => {
     form.get('email')?.setValue('valid@email.com');
-    form.get('password')?.setValue("anyPassword");
+    form.get('password')?.setValue('anyPassword');
 
     expect(form.valid).toBeTruthy();
   })
+
 })

@@ -8,16 +8,17 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
-  goToPickupCalls() {
+  goToPickupCalls(){
     this.router.navigate(['pickup-calls']);
   }
 
-  newPickupCall() {
+  newPickupCall(){
     this.router.navigate(['pickup-call']);
   }
+
 }

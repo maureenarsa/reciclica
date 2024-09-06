@@ -1,9 +1,9 @@
-<ion-header>
-  <ion-toolbar color="secondary" style="color: white;">
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
-    <ion-title>Pickup Call</ion-title>
+    <ion-title>Pickup call</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,11 +18,11 @@
       <p>City name: Kota Denpasar, Bali</p>
     </ion-card-content>
   </ion-card>
-
   <ion-list>
     <ion-item lines="inset">
-      <ion-input label="Notes" labelPlacement="floating" type="text"></ion-input>
+      <ion-label position="floating">Notes</ion-label>
+      <ion-textarea></ion-textarea>
     </ion-item>
   </ion-list>
-  <ion-button size="full" color="secondary" (click)="newPickupCall()">Create Pickup Call</ion-button>
+  <ion-button size="full" color="success" (click)="newPickupCall()">Create pickup call</ion-button>
 </ion-content>

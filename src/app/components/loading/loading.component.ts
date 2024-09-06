@@ -1,7 +1,8 @@
+// import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { AppState } from 'src/store/AppState';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from 'src/store/AppState';
 import { LoadingState } from 'src/store/loading/LoadingState';
 
 @Component({
@@ -9,12 +10,14 @@ import { LoadingState } from 'src/store/loading/LoadingState';
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss'],
 })
-export class LoadingComponent implements OnInit {
-  public loadingState$!: Observable<LoadingState>;  // Pastikan ini dideklarasikan
+export class LoadingComponent  implements OnInit {
 
-  constructor(private store: Store<AppState>) {}
+  loadingState$!: Observable<LoadingState>;
+
+  constructor(private store: Store<{ loading: LoadingState}>) { }
 
   ngOnInit() {
-    this.loadingState$ = this.store.select('loading');  // Inisialisasi loadingState$
+    this.loadingState$ = this.store.select(state => state.loading);
   }
+
 }
